@@ -64,8 +64,8 @@ public class Main {
 			arrNumeros[i] = arrNumeros[i-1];
 		}
 		arrNumeros[0] = auxiliar;
-		for(int i = 0 ; i<10; i++) {
-			System.out.print(arrNumeros[i] + " ");
+		for(int i : arrNumeros) {
+			System.out.print(i + " ");
 		}
 	}
 	
