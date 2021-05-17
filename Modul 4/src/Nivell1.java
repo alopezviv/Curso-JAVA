@@ -49,7 +49,7 @@ public class Nivell1 {
 			isInArray = false;
 			System.out.println("Escriu el plat que vols");
 			plat = sc.nextLine();
-			//Mirem si el plat introduit esta en la carta, si no hi es salta una excepcio i surt un missatge
+			//Mirem si el plat introduit esta en la carta, si no hi es salta una excepcio i surt un missatge (Nivell 2)
 			try {
 				for(int i = 0; i<plats.length;i++) {
 					if(plats[i].equals(plat)){
@@ -65,7 +65,7 @@ public class Nivell1 {
 				System.out.println("El plato no se encuentra en la carta");
 			}
 			//El bucle es va repetint sempre que la reposta de si o no no sigui correcte.
-			//Cada cop que és incorrecte es llança una exception i es torna a preguntar
+			//Cada cop que és incorrecte es llança una exception i es torna a preguntar (nivell 2)
 			 do{
 				try{
 					System.out.println("Vols seguir demanant? 0 No 1 Si");
@@ -127,20 +127,7 @@ public class Nivell1 {
 	}
 
 }
-//Creació de la Excepcio personalitzada (Nivell 2)
-class NotInCartaException extends Exception{
-	public NotInCartaException() {
-		
-	}
-	public NotInCartaException(String s) {
-		super(s);
-	}
-}
-class NotAnOptionException extends Exception{
-	public NotAnOptionException() {
-		
-	}
-	public NotAnOptionException(String s) {
-		super(s);
-	}
-}
+
+
+
+
