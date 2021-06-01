@@ -873,7 +873,7 @@ ALLEN      SALESMAN
 de forma que en la clausula WHERE no haya conectores logicos como AND, OR, etc. 
 Si ayuda a resolver la pregunta, se puede suponer que el nombre del empleado tiene al menos cinco letras.
 
-
+select  ename, job FROM empleados where  length(ename) = 5  group by job order by job desc limit 1;
 
 ENAME      JOB
 ---------- ---------
@@ -911,6 +911,17 @@ FORD
 /* 46. Suponiendo que el a~no proximo la subida del sueldo total de cada empleado sera del 6 %, 
 y el siguiente del 7 %, halla los nombres y el salario total actual, del a~no proximo y del 
 siguiente, de cada empleado. Indique ademas con SI o NO, si el empleado tiene comision. Como en la pregunta
+
+select  ename, 
+case
+	when comm = 0 then "no"
+	when comm > 0 then "yes"
+	else "nosesabe"
+end   as "COMM", 
+(sal+comm) as "Salario_total", ((sal+comm) * 1.06) as "Salario_proximo_año",
+(((sal+comm)*1.06)*1.07) as "Salario_siguiente_año"
+FROM empleados;
+
 
 ENAME      COMM     SALARIO_TOTAL SALARIO_DEL_PROXIMO_AÑO SALARIO_DEL_SIGUIENTE_AÑO
 ---------- -------- ------------- ----------------------- -------------------------
@@ -1133,6 +1144,10 @@ SALES          1566,66667
 /* 58. ¿Que empleados trabajan en ciudades de mas de cinco letras? Ordena el resultado 
 inversamente por ciudades y normalmente por los nombres de los empleados.
 
+select  ename FROM empleados 
+inner join departamentos on empleados.DEPTNO = departamentos.deptno 
+where  length(loc)  > 5 order by loc desc , ename ;
+
 ENAME
 ----------
 CLARK
@@ -1156,6 +1171,8 @@ WARD
 
 /* 59. Halla los empleados cuyo salario supera o coincide con la media del salario de la empresa.
 
+select  ename FROM empleados where sal > (select avg(sal) from empleados) ;
+
 ENAME
 ----------
 JONES
@@ -1170,6 +1187,10 @@ FORD
 
 
 /* 60. Obten los empleados cuyo salario supera al de sus compa~neros de departamento.
+
+select  ename FROM empleados
+inner join departamentos on empleados.deptno = departamentos.deptno
+where sal = (select max(sal) from empleados where deptno = departamentos.deptno );
 
 ENAME
 ----------
