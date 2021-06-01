@@ -14,7 +14,7 @@ public class Main {
 		controller.createJunior("Pedro Junior", "Direccion molona 2", "665266666", 1200);
 		controller.createMid("Laura Mid", "Direccion molona 3", "625266666", 2000);
 		controller.createSenior("Manuel Senior", "Direccion molona 3", "625266666", 2950);
-		controller.createVolunteer("Juan Volunteer", "Direccion molona 4", "614266666");
+		controller.createVolunteer("Juan Volunteer", "Direccion molona 4", "614266666",100);
 		controller.createManagerEmployee("Pedro Manager", "Direccion molona 5", "665226666", 3900);
 		}catch(Exception e){
 			System.out.println("Ha habido un error");
@@ -23,6 +23,12 @@ public class Main {
 		controller.payAllEmployeers();
 		
 		String allEmployees=controller.getAllEmployees();
+		
+		System.out.println("EMPLOYEES: " + allEmployees + " \n");
+		
+		controller.payAllEmployeesBonus();
+		
+		allEmployees=controller.getAllEmployees();
 		
 		System.out.println("EMPLOYEES: " + allEmployees + " \n");
 		

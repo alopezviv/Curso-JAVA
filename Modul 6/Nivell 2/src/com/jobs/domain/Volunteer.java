@@ -12,8 +12,13 @@ public class Volunteer extends AbsStaffMember {
 	
 	@Override
 	public void pay() {
-		totalPaid = 0;
-		
+		try {
+			if(totalPaid > 0) {
+				throw new Exception();
+			}
+		}catch(Exception e) {
+			System.out.println("Los Voluntarios no pueden cobrar");
+		}
 	}
 	public String toString() {
 		
