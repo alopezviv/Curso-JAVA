@@ -12,6 +12,7 @@ public class Controller {
 	}
 	public void createWheel(String brand, double diametro) {
 		Wheel wheel = new Wheel (brand,diametro);
+		baseDades.addWheel(wheel);
 	}
 	
 	public void addWheelsCar(int i) throws Exception{

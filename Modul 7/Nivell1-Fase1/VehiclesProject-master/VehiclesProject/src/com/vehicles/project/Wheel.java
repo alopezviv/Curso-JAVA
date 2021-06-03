@@ -8,4 +8,12 @@ public class Wheel {
 		this.brand = brand;
 		this.diameter = diameter;
 	}
+	public boolean equals(Wheel wheel) {
+		//Override per comparar les wheels com nosaltres volem
+		boolean result = false;
+		if(brand.equals(wheel.brand) && diameter == wheel.diameter) {
+			result = true;
+		}
+		return result;
+	}
 }
