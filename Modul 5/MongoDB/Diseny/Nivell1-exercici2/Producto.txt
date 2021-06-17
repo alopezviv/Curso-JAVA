@@ -1,0 +1,12 @@
+{
+	"_id": ObjectId("2984693"),
+	"tipo": "pizza",
+	"nombre": "pizza margarita",
+	"descripcion": "esta muy buena",
+	"imagen": "https:\\www.google.es",
+	"precio": 10,
+	"categoria":{ 
+		"_id": ObjectId("2dasd93"),
+		"tipo": "veraniega"
+		}
+}

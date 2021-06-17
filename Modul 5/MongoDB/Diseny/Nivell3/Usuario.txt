@@ -1,0 +1,13 @@
+{
+	"_id": ObjectId("32147109hdskahdqa"),
+	"email": "hola@gmail.com",
+	"password": "sdal831",
+	"userName": "Pablo98",
+	"fechaNacimiento": new Date("1999-6-15"),
+	"sexo": "hombre",
+	"pais": "Argentina",
+	"codigoPostal": "89123",
+	"isPremium": 1,
+	"cancionesFavoritas": [{"_id": ObjectId("36456dfsvevdqa")},{"_id": ObjectId("321324525642rwa")}],
+	"albumesFavoritos": [{"_id": ObjectId("254327365skahdqa")},{"_id": ObjectId("fhauyr39hdskahdqa")}],
+}

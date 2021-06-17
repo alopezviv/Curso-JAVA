@@ -1,0 +1,20 @@
+{
+	"_id": ObjectId("3423245vfcvbz")
+	"nombre": "cliente1",
+	"direccion":{
+		"calle": "Gran Via",
+		"numero": "423",
+		"piso": "3",
+		"puerta": "2",
+		"ciudad": "Sydney",
+		"codigo postas": "32141",
+		"pais":	"AU"	
+			},
+	"telefono": "34121513",
+	"email": "123712947@gmail.com",
+	"registerDate": new Date("2021,6,17"),
+	"recomendacion":{
+		"_id": ObjectId("342324213123z"),
+		"nombre": "cliente3"	
+	}
+}

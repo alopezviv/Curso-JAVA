@@ -1,0 +1,10 @@
+{
+	"_id": ObjectId("w1243asfrw"),
+	"usuario": {
+		"_id": ObjectId("wrqasd132452rw"),
+		"userName": "fran54"	
+	}
+	"nombreCanal": "canal para gamers",
+	"fechaCreacion": new Date("2014-8-12"),
+	"descripcion": "un canal de gaming"
+}

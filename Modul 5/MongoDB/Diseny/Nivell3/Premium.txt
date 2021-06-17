@@ -1,0 +1,13 @@
+{
+	"_id": ObjectId("3461294gdaks"),
+	"fechaInicio": new Date("2019-9-18"),
+	"fechaRenovacion": new Date("2021-6-25"),
+	"usuario":{
+		"_id": ObjectId("371294671920kda"),
+		"userName": "pedro777"
+	}
+	"formaPago":{
+		"_id": ObjectId("371294671920kda")
+	}
+
+}

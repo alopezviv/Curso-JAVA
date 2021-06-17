@@ -1,0 +1,6 @@
+{
+	"_id": ObjectId("3214712362"),
+	"numero": "3712094791645192",
+	"codigoSeguridad": "354",
+	"caducidad": new Date(2025-5-1)
+}

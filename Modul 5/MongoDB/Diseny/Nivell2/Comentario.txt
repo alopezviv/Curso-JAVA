@@ -1,0 +1,7 @@
+{
+	"_id": ObjectId("w1243asfrw"),
+	"fechaCreacion": ISODate("2021-6-16T06:45:17.171Z"),
+	"texto": "El video muy guai",
+	usuariosLike:[{"_id": ObjectId("w12233123rw"),"fecha": ISODate("2020-6-16T06:45:17.171Z")},{"_id": ObjectId("2346as34w"),"fecha": ISODate("2020-6-16T06:45:17.171Z")}],
+	usuariosDislike:[{"_id": ObjectId("w1wqaedasfrw"),"fecha": ISODate("2020-6-16T06:45:17.171Z")},{"_id": ObjectId("w9786575frw"),"fecha": ISODate("2020-6-16T06:45:17.171Z")}]
+}

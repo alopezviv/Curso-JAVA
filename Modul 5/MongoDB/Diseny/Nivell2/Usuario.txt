@@ -1,0 +1,17 @@
+{
+	"_id": ObjectId("4398126y479fa"),
+	"mail": "fakemail@gmail.com",
+	"password": "1320awskdh",
+	"userName": "holaquetal",
+	"fechaNacimiento": new Date("1990-3-2"),
+	"sexo": "masculino",
+	"direccion":{
+		"pais": "spain",
+		"codigoPostal": "32143"
+	},
+	"subscriptions": [ObjectId("4398123539fa"),ObjectId("439das34fa"),ObjectId("43984129fa"),ObjectId("4398121239fa")],//id canals
+	"videosLike": [{"_id": ObjectId("4398121239fa"),"fecha": ISODate("2020-6-16T06:45:17.171Z")},{"_id": ObjectId("4391545432y479fa"),"fecha": ISODate("2020-6-16T06:45:17.171Z"))}],
+	
+	"videosDislike": [{"_id": ObjectId("43943129fa"),"fecha": ISODate("2020-6-16T06:45:17.171Z")},{"_id": ObjectId("4398235646y479fa"),"fecha": ISODate("2020-6-16T06:45:17.171Z")}]
+}
+}

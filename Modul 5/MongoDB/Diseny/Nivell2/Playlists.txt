@@ -1,0 +1,10 @@
+{
+	"_id": ObjectId("694dsae912h"),
+	"nombrePlaylist": "musica",
+	"fechaCreacion": new Date("2018-6-5"),
+	"estado": "publica",
+	"usuario":{
+		"_id": ObjectId("a287310dhas")
+		"userName": "Paco33",
+	}
+}

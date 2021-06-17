@@ -1,0 +1,8 @@
+{
+	"_id": ObjectId("391231244691"),
+	"nombre": "empleado1",
+	"apellido": "fernandez",
+	"nif": "53535663F",
+	"telefono": "4342353262",
+	"empleo": "cocinero"
+}

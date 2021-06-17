@@ -1,0 +1,9 @@
+{
+	"_id": ObjectId("21532634dssa"),
+	"numOrden": "2124151",
+	"fecha": new Date("2021-6-15")
+	"usuario":{
+		"_id": ObjectId("dagfasl21413531252an"),
+	},
+	"total": 10,
+}

@@ -1,0 +1,17 @@
+{
+	"_id": ObjectId("321341"),
+	"nombre": "Alberto",
+	"direccion":{
+		"calle": "Gran Via",
+		"numero": "423",
+		"piso": "3",
+		"puerta": "2",
+		"ciudad": "Sydney",
+		"codigo postas": "32141",
+		"pais":	"AU"	
+			},
+	"telefono": "21312412",
+	"fax": "341231231",
+	"NIF": "313131221-z"
+	
+}

@@ -1,0 +1,16 @@
+{
+	"_id": ObjectId("32719846198shdak"),
+	"marca": "gafas-max",
+	"graduacion": [2.5,3],
+	"tipoMontura": "flotante",
+	"colorMontura": "marron",
+	"colorVidrio": "negro",
+	"precio": 87,
+	"proovedor":{
+//afegim Id del prooveedor i algunes dades que requereixin rapida consulta, per la resta s'haura de buscar el objecte del proovedor
+		"_id": ObjectId("321341"),
+		"nombre": "Alberto",
+		"telefono": "21312412"
+		}
+
+}

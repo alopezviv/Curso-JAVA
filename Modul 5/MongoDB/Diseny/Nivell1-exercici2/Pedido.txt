@@ -1,0 +1,34 @@
+{
+	"_id": ObjectId("3127098347dakshd"),
+	"fecha": ISODate("2021-6-16T06:01:17.171Z"),
+	"tipoPedido": {
+		"isDomicilio": 1,
+		"repartidor"{
+			"_id": ObjectId("45u238945723057"),
+			"nombre": "fran",
+			"telefono": "6341269",
+			"fechaEntrega": ISODate("2021-6-16T06:45:17.171Z")
+			}
+		}
+	"numProductos": [1,2,4],
+	"precio": 32,
+	"cliente":{
+		"_id": ObjectId("3021931089fs"),
+		"nombre": "juan",
+		"telefono": "1237012"
+	}
+	"tienda": {
+		"_id": ObjectId("314141089fs"),
+		"nombre": "pizzeria 3",
+		"direccion":{
+			"calle": "Petit Via",
+			"numero": "13",
+			"piso": "3",
+			"puerta": "2",
+			"ciudad": "barcelona",
+			"provincia": "barcelona",
+			"codigo postal": "32131"		
+			},
+		"telefono": "243262"
+		}
+}

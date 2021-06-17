@@ -1,0 +1,6 @@
+{
+	"_id": ObjectId("32147109hdskahdqa"),
+	"nombre": "Alejandro Sanz",
+	"imagen": "htttp\\imagenes.com"
+	"artistasRelacionados"[{"_id": ObjectId("32awsdfahdqa")},{"_id": ObjectId("3897958vb8dqa")}]
+}

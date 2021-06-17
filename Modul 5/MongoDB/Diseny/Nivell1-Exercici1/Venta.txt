@@ -1,0 +1,12 @@
+{	
+	"_id": ObjectId("32719846198shdak"),
+	"gafa":{
+		"_id": ObjectId("qew1234141k"),
+		"marca": "fashion",
+		"precio": 56			
+	}
+	"empleado": {
+		"numEmpleado": 45,
+		"nombre": "Fran"
+	}
+}

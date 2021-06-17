@@ -1,0 +1,15 @@
+{
+	"_id": ObjectId("3981468914691"),
+	"nombre": "cliente1",
+	"apellido": "leal",
+	"direccion":{
+		"calle": "Gran Via",
+		"numero": "23",
+		"piso": "3",
+		"puerta": "2",
+		"ciudad": "barcelona",
+		"provincia": "barcelona",
+		"codigo postal": "32141"		
+		},
+	"telefono": "432534262"
+}

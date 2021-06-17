@@ -1,0 +1,10 @@
+{
+	"_id": ObjectId("321534236df"),
+	"titulo": "Amanecer"
+	"año": 2020,
+	"imagen": "https:\\imagenes.com"
+	"artista":{
+		"_id": ObjectId("34q5vqt3574vq"),
+		"nombre": "paquito"
+	}
+}

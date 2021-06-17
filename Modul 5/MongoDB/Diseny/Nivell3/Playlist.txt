@@ -1,0 +1,38 @@
+//exemple playlist eliminada
+{
+	"_id": ObjectId("3215236wgfws523"),
+	"titulo": "rock",
+	"numCanciones": 50,
+	"fechaCreacion": new Date("2019-5-8")
+	"estado"{
+		"condicion": "eliminada",
+		"fechaEliminacion": new Date("2020-8-19")
+	},
+	"usuario":{
+		"_id": ObjectId("407128315shfadkhr"),
+	}
+}
+//exemple playlist compartida
+{
+	"_id": ObjectId("3215236wgfws523"),
+	"titulo": "rock",
+	"numCanciones": 50,
+	"fechaCreacion": new Date("2019-5-8")
+	"estado"{
+		"condicion": "activa",
+		"usuarios compartiendo":[
+			{
+				"idUsuario": ObjectId("347210847dhask"),
+				"cancionesIntroducidas": [{"_id": ObjectId("fs4314132s523"),"fecha": new Date("2019-5-8")},{"_id": ObjectId("322345622523"),"fecha": new Date("2019-5-18")}]
+			},
+			{
+				"idUsuario": ObjectId("3441hfdhs8k"),
+				"cancionesIntroducidas": [{"_id": ObjectId("f3543252343"),"fecha": new Date("2018-4-8")},{"_id": ObjectId("3223fsdfs523"),"fecha": new Date("2019-5-19")}]
+			}
+
+		]
+	},
+	"usuario":{
+		"_id": ObjectId("407128315shfadkhr"),
+	}
+}

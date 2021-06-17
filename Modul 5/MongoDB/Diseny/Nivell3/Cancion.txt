@@ -1,0 +1,9 @@
+{
+	"_id": ObjectId("rw5126vc4qa"),
+	"titol": "corazon latino",
+	"duracion": 156,
+	"reproducciones": 89000,
+	"album"{
+		"_id": ObjectId("8976585bgb"),
+	}
+}

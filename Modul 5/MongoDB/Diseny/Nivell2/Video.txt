@@ -1,0 +1,21 @@
+{
+	"_id": ObjectId("231e0913e4"),
+	"titulo": "video guai",
+	"descripcion": "video de coches",
+	"tamaño": 123412354132134, // en bytes
+	"duracion": 300, //en segundos
+	"nombreArchivo": "video.mp4",
+	"thumbnail": "http:\\google.com/thumbnail",
+	"numReproducciones": 3009,
+	"numLikes": 456,
+	"numDislikes": 100,
+	"usuario": {
+		"_id": ObjectId("141241e4"),
+		"userName": "cochefanatic22",
+		"fechaSubida": ISODate("2020-6-16T06:45:17.171Z")
+	},
+	"etiquetas": [{"_id": ObjectId("4398122539fa"),"nombre": "coche"},{"_id": ObjectId("439423y479fa"),"nombre": "motor"}],
+	"estado": "publico"
+	
+
+}

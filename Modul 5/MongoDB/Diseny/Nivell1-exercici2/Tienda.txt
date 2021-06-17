@@ -1,0 +1,14 @@
+{
+	"_id": ObjectId("314141089fs"),
+	"nombre": "pizzeria 3",
+	"direccion":{
+		"calle": "Petit Via",
+		"numero": "13",
+		"piso": "3",
+		"puerta": "2",
+		"ciudad": "barcelona",
+		"provincia": "barcelona",
+		"codigo postal": "32131"		
+		},
+	"telefono": "243262"
+}
