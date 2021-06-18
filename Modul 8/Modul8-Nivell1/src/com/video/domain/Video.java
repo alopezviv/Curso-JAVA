@@ -3,6 +3,8 @@ package com.video.domain;
 import java.util.ArrayList;
 import java.util.List;
 
+import com.video.application.Utilitats;
+
 public class Video {
 	private String URL;
 	private List<Tag> tagList = new ArrayList<Tag>();
@@ -25,8 +27,13 @@ public class Video {
 	public void setURL(String uRL) {
 		URL = uRL;
 	}
-	public void addTag(Tag tag) {
-		tagList.add(tag);
-	}
 	
+	public void addTag(String s) throws Exception {
+		Utilitats.comprobarCamps(s);
+		tagList.add(new Tag(s));
+	}
+	public List<Tag> getTagList() {
+		return tagList;
+	}
+
 }
