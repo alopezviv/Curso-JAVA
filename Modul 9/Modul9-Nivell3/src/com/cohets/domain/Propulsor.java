@@ -3,7 +3,7 @@ package com.cohets.domain;
 public class Propulsor implements Runnable {
 	int numPropulsor;
 	int potenciaActual;
-	Thread t ;
+	Thread t = new Thread(this);
 	int potenciaMax;
 	boolean isAcelerating;
 	boolean isActive = true;
@@ -109,7 +109,7 @@ public class Propulsor implements Runnable {
 						System.out.println(this.toString());
 					}
 					try {
-						Thread.sleep(1000);
+						Thread.sleep(3000);
 					} catch (InterruptedException e) {
 						// TODO Auto-generated catch block
 						t.interrupt();;
@@ -124,7 +124,7 @@ public class Propulsor implements Runnable {
 							System.out.println("Propulsor " + getNumPropulsor() + " parado");
 						}
 						try {
-							Thread.sleep(1000);
+							Thread.sleep(3000);
 						} catch (InterruptedException e) {
 							// TODO Auto-generated catch block
 							t.interrupt();

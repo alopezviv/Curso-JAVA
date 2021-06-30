@@ -4,13 +4,20 @@ public class Coet implements Runnable{
 	private String name;
 	private List<Propulsor> propulsors = new ArrayList<Propulsor>();
 	private double velocitat;
+	private double velocitatInicial;
+
 	private double velocitatObjectiu;
 	public Coet(String name, double velocitat, double velocitatObjectiu){
 		this.name = name;
 		this.velocitat = velocitat;
+		this.velocitatInicial = velocitat;
 		this.velocitatObjectiu = velocitatObjectiu;
 	}
 	
+	public List<Propulsor> getPropulsors() {
+		return propulsors;
+	}
+
 	public String toString() {
 		String propulsorString = "\n";
 		for(Propulsor pr: propulsors) {
@@ -40,7 +47,7 @@ public class Coet implements Runnable{
 		for(Propulsor p: propulsors) {
 			//Cambiem els dos booleans del run() del propulsor el que hauria de fer que acabes el metode y moris el fil
 			p.setActive(false);
-//			p.setAcelerating(!p.isAcelerating);
+			p.setAcelerating(!p.isAcelerating);
 			p.getT().interrupt();
 			
 		}
@@ -95,17 +102,30 @@ public class Coet implements Runnable{
 			return;
 		}
 		int potenciaTotal = 0;
-		iniciar();
-		accelerar();
-		double velocitatInicial = velocitat;
-		while(velocitat < velocitatObjectiu) {
-			potenciaTotal=0;
-			for(Propulsor p: propulsors) {
-				potenciaTotal += p.getPotenciaActual();
+		if(velocitat < velocitatObjectiu){
+			accelerar();
+			iniciar();
+
+			while(velocitat < velocitatObjectiu) {
+				potenciaTotal=0;
+				for(Propulsor p: propulsors) {
+					potenciaTotal += p.getPotenciaActual();
+				}
+				velocitat = velocitatInicial + (100 * Math.sqrt(potenciaTotal));
 			}
-			velocitat = velocitatInicial + (100 * Math.sqrt(potenciaTotal));
+		}else if(velocitat > velocitatObjectiu) {
+			frenar();
+			iniciar();
+
+			while(velocitat > velocitatObjectiu) {
+				potenciaTotal=0;
+				for(Propulsor p: propulsors) {
+					potenciaTotal += p.getPotenciaActual();
+				}
+				velocitat = velocitatInicial + (100 * Math.sqrt(potenciaTotal));
+			}
 		}
-		frenar();
+		
 		System.out.println("El cohete ha llegado a la velocidad");
 		parar();
 	}
