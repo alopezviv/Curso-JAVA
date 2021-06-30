@@ -35,10 +35,11 @@ public class Ventana extends JFrame{
 		JButton botonVelocidad = new JButton("Cambiar velocidad");
 		botonVelocidad.setBounds(50, 80, 150, 30);
 		botonVelocidad.addActionListener(e ->{
-			if(c.getPropulsors().get(0).getT().isAlive() ) {
-				c.parar();
-			}
-			if(c.getPropulsors().get(0).getT() == null){
+			if(c.getPropulsors().get(0).getT() != null){
+				if(c.getPropulsors().get(0).getT().isAlive() ) {
+					c.parar();
+				}
+				
 				
 			}
 			c.setVelocitatObjectiu(Double.parseDouble(cajaTexto.getText()));
@@ -51,10 +52,11 @@ public class Ventana extends JFrame{
 		JButton aceleracion5 = new JButton("Acceleracion 5");
 		aceleracion5.setBounds(300, 50, 150, 30);
 		aceleracion5.addActionListener(e ->{
-			if(c.getPropulsors().get(0).getT().isAlive() ) {
-				c.parar();
-			}
-			if(c.getPropulsors().get(0).getT() == null){
+			if(c.getPropulsors().get(0).getT() != null){
+				if(c.getPropulsors().get(0).getT().isAlive() ) {
+					c.parar();
+				}
+				
 				
 			}
 			c.getPropulsors().forEach(p -> p.setAceleracion(5));
@@ -66,10 +68,11 @@ public class Ventana extends JFrame{
 		JButton aceleracion5 = new JButton("Acceleracion 1");
 		aceleracion5.setBounds(300, 90, 150, 30);
 		aceleracion5.addActionListener(e ->{
-			if(c.getPropulsors().get(0).getT().isAlive() ) {
-				c.parar();
-			}
-			if(c.getPropulsors().get(0).getT() == null){
+			if(c.getPropulsors().get(0).getT() != null){
+				if(c.getPropulsors().get(0).getT().isAlive() ) {
+					c.parar();
+				}
+				
 				
 			}
 			c.getPropulsors().forEach(p -> p.setAceleracion(1));

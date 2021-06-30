@@ -7,7 +7,7 @@ public class Main {
 	public static void main(String[] args) {
 		Ventana v1 = new Ventana();
 		Ventana v2 = new Ventana();
-		Coet coet1 = new Coet("32WESSDS",100,1220);
+		Coet coet1 = new Coet("32WESSDS",100,10000);
 		v1.setTitle("Coet 32WESSDS Control Panel");
 		v1.addButtonVelocidad(coet1);
 		v1.addBottonAceleracion1(coet1);

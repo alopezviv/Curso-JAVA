@@ -3,7 +3,7 @@ package com.cohets.domain;
 public class Propulsor implements Runnable {
 	int numPropulsor;
 	int potenciaActual;
-	Thread t = new Thread(this);
+	Thread t ; 
 	int potenciaMax;
 	boolean isAcelerating;
 	boolean isActive = true;
@@ -13,6 +13,7 @@ public class Propulsor implements Runnable {
 		setPotenciaMax(potenciaMax);
 		setPotenciaActual(0);
 		setAceleracion(1);
+		
 	}
 
 
