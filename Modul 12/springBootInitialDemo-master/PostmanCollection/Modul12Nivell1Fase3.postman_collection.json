@@ -1,0 +1,45 @@
+{
+	"info": {
+		"_postman_id": "b77dac5d-936d-493b-a8c8-8401d71dc3df",
+		"name": "Modul12Nivell1Fase3",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "{{IP}}{{port}}/v1/",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{IP}}{{port}}/v1/",
+					"host": [
+						"{{IP}}{{port}}"
+					],
+					"path": [
+						"v1",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "{{IP}}{{port}}/v1/Alberto",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{IP}}{{port}}/v1/Alberto",
+					"host": [
+						"{{IP}}{{port}}"
+					],
+					"path": [
+						"v1",
+						"Alberto"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
