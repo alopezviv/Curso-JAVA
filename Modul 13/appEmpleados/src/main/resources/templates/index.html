@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html xmnls:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<h1>Gestión de empleados</h1>
+	
+	<table>
+		<thead>
+			<tr><th>ID<th>Nombre<th>Trabajo<th>Salario<th>Borrar<th>Modificar</tr>
+		</thead>
+		<tbody>
+			<tr th:each="empleado : ${empleados}">
+				<td th:text="${empleado.id}"></td>
+				<td th:text="${empleado.name}"></td>
+				<td th:text="${empleado.work}"></td>
+				<td th:text="${empleado.salary}"></td>
+				<td><a th:href="@{/borrado/}+${empleado.id}">Borrar</a></td>
+				<td><a th:href="@{/modificar/}+${empleado.id}">Modificado</a></td>
+			</tr>
+		</tbody>
+	</table>
+	
+	<form th:action="${action}" method="post">
+		<span style="display:none;">ID: <input name=intId type="text" th:value="${intId}" ></span>
+		Nombre<input name=name type="text" th:value="${empleado?.name}"><br>
+		Trabajo: <input type="radio" name=work value="ADMINISTRATIVO">ADMINISTRATIVO <input type="radio" name=work value="COMERCIAL">COMERCIAL
+		<input type="submit" th:value="${boton}">
+	</form>
+</body>
+</html>
