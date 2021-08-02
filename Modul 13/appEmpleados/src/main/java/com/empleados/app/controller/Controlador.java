@@ -1,5 +1,6 @@
 package com.empleados.app.controller;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.stereotype.Controller;
@@ -62,6 +63,19 @@ public class Controlador {
 		//int id = intId.intValue();
 		bd.modifica(empleado, intId);
 		List<Empleado> empleados = bd.getEmpleados();
+		model.addAttribute("empleados", empleados);
+		model.addAttribute("boton", "Insertar Empleado");
+		model.addAttribute("action", "/insertar");
+		return "index";
+	}
+	@PostMapping("/filtro")
+	public String modificar2(Model model, String work) {
+		List<Empleado> empleados = new ArrayList<Empleado>();
+		if(work.equals("TODOS")) {
+			empleados = bd.getEmpleados();
+		}else {
+			empleados = bd.filtra(work);
+		}
 		model.addAttribute("empleados", empleados);
 		model.addAttribute("boton", "Insertar Empleado");
 		model.addAttribute("action", "/insertar");

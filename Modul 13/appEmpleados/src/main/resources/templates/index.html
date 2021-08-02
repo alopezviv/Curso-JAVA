@@ -26,8 +26,13 @@
 	<form th:action="${action}" method="post">
 		<span style="display:none;">ID: <input name=intId type="text" th:value="${intId}" ></span>
 		Nombre<input name=name type="text" th:value="${empleado?.name}"><br>
-		Trabajo: <input type="radio" name=work value="ADMINISTRATIVO">ADMINISTRATIVO <input type="radio" name=work value="COMERCIAL">COMERCIAL
+		Trabajo: <input type="radio" name=work value="ADMINISTRATIVO">ADMINISTRATIVO <input type="radio" name=work value="COMERCIAL">COMERCIAL<br>
 		<input type="submit" th:value="${boton}">
+	</form>
+	<form action="/filtro" method="post">
+		<input type="radio" name=work value="ADMINISTRATIVO">ADMINISTRATIVO <input type="radio" name=work value="COMERCIAL">COMERCIAL
+		<input type="radio" name=work value="TODOS">TODOS<br>
+		<input type="submit" value="Filtrar trabajo">
 	</form>
 </body>
 </html>

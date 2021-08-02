@@ -68,7 +68,16 @@ public class BaseDades {
 		  }
 	  }
   }
-  
+  public List<Empleado> filtra(String s){
+	  
+	  List<Empleado> filtrado = new ArrayList<Empleado>();
+	  for(Empleado e: empleados) {
+		  if(e.getWork().toUpperCase().equals(s.toUpperCase())) {
+			  filtrado.add(e);
+		  }
+	  }
+	  return filtrado;
+  }
  
  
 }
