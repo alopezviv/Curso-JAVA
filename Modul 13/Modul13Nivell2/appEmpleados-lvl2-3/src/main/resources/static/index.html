@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style rel="stylesheet" href="style.css"></style>
+    <title>Document</title>
+</head>
+<body>
+    <h1>Gestión de empleados</h1>
+	
+	<table>
+		<thead>
+			<tr><th>ID<th>Nombre<th>Salario<th>Trabajoo<th>Borrar<th>Modificar</tr>
+		</thead>
+		<tbody id="cuerpoTabla">
+			<tr>
+				<td id="empleadoId"></td>
+				<td id="empleadoNombre"></td>
+				<td id="empladoTrabajo"></td>
+				<td id="empleadoSalario"></td>
+				
+			</tr>
+		</tbody>
+	</table>
+	<h3>Registro</h3>
+	<form id="formularioRegistro" method="POST">
+		
+		Nombre<input name=name type="text" ><br>
+		Trabajo: <input type="radio" name=work value="ADMINISTRATIVO">ADMINISTRATIVO <input type="radio" name=work value="COMERCIAL">COMERCIAL<br>
+		
+		<input type="submit" name="registrar" value="Registrar" id="registrarUsuario">
+	</form>
+	<h3>Modificacion</h3>
+	<form id="formularioModificacion" method="POST">
+		<span style="display: none;">ID:<input name=id type="text" id="idModificar"  ><br></span>
+		Nombre:<input name=name type="text" id="nombreModificar" ><br>
+		Trabajo: <input type="radio" name=work value="ADMINISTRATIVO" id="administrativoModificar">ADMINISTRATIVO <input type="radio" name=work value="COMERCIAL" id="comercialModificar">COMERCIAL<br>
+		
+		<input type="submit" name="registrar" value="Modificar" id="modificarUsuario" >
+	</form>
+	
+
+    <script src="jquery-3.6.0.min.js"></script>   
+    <script src="script.js"></script> 
+</body>
+</html>

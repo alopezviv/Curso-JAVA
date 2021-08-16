@@ -15,7 +15,9 @@ public class Empleado {
 	private enum Work{ADMINISTRATIVO, COMERCIAL};
 	private float salary;
 	private Work work;
-	
+	public Empleado() {
+		
+	}
 	public Empleado(String name, String work) {
 		//this.id = classId;
 		//classId++;
