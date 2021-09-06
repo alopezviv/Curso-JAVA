@@ -1,6 +1,7 @@
 package com.empleados.app.service;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 import java.util.Optional;
 
@@ -15,8 +16,9 @@ public class BaseDatosService implements IBaseDatos {
 	BaseDatos bd;
 	@Override
 	public List<Empleado> getEmpleados() {
-		
-		return (List<Empleado>)bd.findAll();
+		List<Empleado> empleados =(List<Empleado>)bd.findAll();
+		Collections.sort(empleados, (a,b)->Integer.compare(a.getId(),b.getId()));
+		return empleados;
 	}
 
 	@Override

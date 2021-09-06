@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style rel="stylesheet" href="style.css"></style>
+    <title>Document</title>
+	<link rel="stylesheet" href="bootstrap.css">
+</head>
+<body>
+	<main class="container">
+		<div class="row">
+			<h1 class="d-flex justify-content-center text-light bg-dark">Gestión de empleados nivel 3</h1>
+		</div>
+		<div class="row d-flex justify-content-center">
+			<table class="table table-dark border border-dark">
+				<thead >
+					<tr><th>ID<th>Nombre<th>Salario<th>Trabajo<th>Borrar<th>Modificar</tr>
+				</thead>
+				<tbody id="cuerpoTabla">
+					
+				</tbody>
+			</table>
+		</div>	
+		<div class="row">
+			<div class="col-6">
+				<button class="btn btn-dark" type="button" data-bs-toggle="collapse" data-bs-target="#collapseRegistro" aria-expanded="false" aria-controls="collapseRegistro">Registro</button>
+				<div class="collapse" id="collapseRegistro">
+					<div class="card card-body">
+						<form id="formularioRegistro" method="POST">
+							
+							Nombre<input name=name type="text" ><br>
+							Trabajo: <input type="radio" name=work value="ADMINISTRATIVO">ADMINISTRATIVO <input type="radio" name=work value="COMERCIAL">COMERCIAL<br>
+							
+							<input type="submit" name="registrar" value="Registrar" id="registrarUsuario">
+						</form>
+					</div>
+				</div>
+			</div>
+			<div class="col-6">
+				<button id="botonModificar" class="btn btn-dark" type="button" data-bs-toggle="collapse" data-bs-target="#collapseModificacion" aria-expanded="false" aria-controls="collapseModificacion">Modificacion</button>
+				<div class="collapse" id="collapseModificacion">
+					<div class="card card-body">
+						<form id="formularioModificacion" method="POST">
+							<span style="display: none;">ID:<input name=id type="text" id="idModificar"  ><br></span>
+							Nombre:<input name=name type="text" id="nombreModificar" ><br>
+							Trabajo: <input type="radio" name=work value="ADMINISTRATIVO" id="administrativoModificar">ADMINISTRATIVO <input type="radio" name=work value="COMERCIAL" id="comercialModificar">COMERCIAL<br>
+							
+							<input type="submit" name="registrar" value="Modificar" id="modificarUsuario" >
+						
+						</form>
+					</div>
+				</div>
+			</div>
+		</div>
+	</main>
+
+    <script src="jquery-3.6.0.min.js"></script>
+	<script src="bootstrap.js"></script>    
+    <script src="script.js"></script> 
+</body>
+</html>
