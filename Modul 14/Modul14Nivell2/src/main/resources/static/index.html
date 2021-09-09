@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>App Tiendas</title>
+    <link rel="stylesheet" href="bootstrap.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <main class="container">
+        <div class="row">
+            <div class="col-12 d-flex justify-content-center">
+                <h1>App Tiendas</h1>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-6 d-flex justify-content-center ">
+                <table>
+                    
+                    <thead><th>ID<th>Nombre <th>Capacidad <th>Numero de Cuadros <th>Ver Cuadros </thead>
+                    <tbody id="cuerpoTabla">
+
+
+                    </tbody>    
+                </table>
+            </div>
+            <div class="col-6 d-flex justify-content-center">
+                <table id="tablaCuadros" style="display: none;">
+                    
+                    <thead><th>ID<th>Autor <th>Fecha de entrada</thead>
+                    <tbody id="cuerpoTablaCuadros">
+
+
+                    </tbody>    
+                </table>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-6 d-flex justify-content-around">
+                <form id="formularioTienda" method="post">
+                    Nombre:<input name="name" type="text"><br>
+                    Capacidad:<input name="capacity" type="number"><br>
+                    <input type="submit">
+                </form>
+            </div> 
+            <div class="col-6 d-flex justify-content-around">
+                <form id="formularioCuadro" method="post" style="display: none;">
+                    <span style="display: none;"><input name="shopId" type="text" id="shopId"><br></span>
+                    Autor:<input name="autor" type="text"><br>
+                    <input type="submit">
+                    <button id="botonBorrarCuadros">Borrar Todo</button>
+                </form>
+                
+            </div>
+               
+        </div>
+    </main>
+
+
+    <script src="jquery-3.6.0.min.js"></script>
+    <script src="bootstrap.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
