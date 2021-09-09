@@ -20,24 +20,23 @@ public class PictureService {
 	@Autowired
 	ShopService sh;
 	
-	public ResponseEntity<List<Picture>> getPictures(int shopId) {
+	public List<Picture> getPictures(int shopId) {
 		
-		return new ResponseEntity<>( pic.findByShopId(shopId), HttpStatus.OK);	
+		return  pic.findByShopId(shopId);	
 	}
 	@Transactional
-	public ResponseEntity<String> deletePictures(int shopId) {
+	public void deletePictures(int shopId) {
 		pic.deleteByShopId(shopId);
-		return ResponseEntity.ok("Pictures Deleted");	
+		sh.updateShopPicturesNumber(shopId);
+			
 	}
-	public ResponseEntity<String> createPictures(Picture p, int shopId) {
+	public void createPictures(Picture p, int shopId) throws Exception {
 		
-		if(sh.shopHasSpace(shopId).getBody()) {
+		if(sh.shopHasSpace(shopId)) {
 			//p.setEntranceDate();
 			pic.save(p);
 			sh.updateShopPicturesNumber(shopId);
-			return ResponseEntity.ok("Picture created");
-		}else {
-			return new ResponseEntity<>("Shop doesn't have enough space", HttpStatus.FORBIDDEN);
+			
 		}
 			
 	}

@@ -19,40 +19,41 @@ public class ShopService {
 	@Autowired
 	PictureService pic;
 	
-	public ResponseEntity<String> createShop(Shop s) {
+	public void createShop(Shop s) {
 		sh.save(s);
-		return ResponseEntity.ok("Shop created");
+		
 	}
 	
-	public ResponseEntity<List<Shop>> getShops(){
-		List<Shop> listShop = sh.findAll();
-		return new ResponseEntity<>(listShop, HttpStatus.OK);
+	public List<Shop> getShops(){
+		return sh.findAll();
 	}
-	public ResponseEntity<Shop> getShop(int id) {
+	public Shop getShop(int id) throws Exception {
 		Optional<Shop> s = sh.findById(id);
 		if(s.isPresent()) {
 			Shop shop = s.get();
-			return new ResponseEntity<>(shop, HttpStatus.OK);
+			return shop;
 		}else {
-			return new ResponseEntity<>(null, HttpStatus.NOT_FOUND);
+			throw new Exception("Shop doesn't exists");
 		}
 	}
-	public ResponseEntity<Boolean> shopHasSpace(int id) {
+	public boolean shopHasSpace(int id) throws Exception {
 		boolean result = false;
 		Optional<Shop> s = sh.findById(id);
 		if(s.isPresent()){
 			Shop shop = s.get();
 			if(shop.getPicturesNumber() < shop.getCapacity()) {
 				result = true;
+			}else {
+				throw new Exception("Shop doesn't have space");
 			}
-			return new ResponseEntity<Boolean>(result, HttpStatus.OK);
+			return result;
  
 		}else {
-			return new ResponseEntity<Boolean>(false, HttpStatus.NOT_FOUND);
+			throw new Exception("Shop doesn't exists");
 		}					
 	}
 	public void updateShopPicturesNumber(int id) {
-		int picNumber = pic.getPictures(id).getBody().size();
+		int picNumber = pic.getPictures(id).size();
 		Shop s = sh.findById(id).get();
 		s.setPicturesNumber(picNumber);
 		sh.save(s);
