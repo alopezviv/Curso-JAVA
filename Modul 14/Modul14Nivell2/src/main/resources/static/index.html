@@ -18,7 +18,7 @@
         </div>
         <div class="row">
             <div class="col-6 d-flex justify-content-center ">
-                <table>
+                <table class="table table-success table-bordered">
                     
                     <thead><th>ID<th>Nombre <th>Capacidad <th>Numero de Cuadros <th>Ver Cuadros </thead>
                     <tbody id="cuerpoTabla">
@@ -27,41 +27,45 @@
                     </tbody>    
                 </table>
             </div>
-            <div class="col-6 d-flex justify-content-center">
-                <table id="tablaCuadros" style="display: none;">
-                    
-                    <thead><th>ID<th>Autor <th>Fecha de entrada</thead>
-                    <tbody id="cuerpoTablaCuadros">
+             <div id="containerCuadros" class="col-6 d-flex ">
+              <!--  <div class="collapse" id="collapseExample">
+                    <div class="card card-body">
+                        <table class="table" id="tablaCuadros" style="display: none;" >
+                            
+                            <thead><th>ID<th>Autor <th>Fecha de entrada</thead>
+                            <tbody id="cuerpoTablaCuadros">
 
 
-                    </tbody>    
-                </table>
-            </div>
+                            </tbody>    
+                        </table>
+                    </div>
+                </div>        
+            </div>-->
         </div>
         <div class="row">
             <div class="col-6 d-flex justify-content-around">
                 <form id="formularioTienda" method="post">
-                    Nombre:<input name="name" type="text"><br>
-                    Capacidad:<input name="capacity" type="number"><br>
-                    <input type="submit">
+                    Nombre:<input class="form-control" name="name" type="text"><br>
+                    Capacidad:<input  class="form-control" name="capacity" type="number"><br>
+                    <input class="btn btn-outline-secondary" type="submit">
                 </form>
             </div> 
             <div class="col-6 d-flex justify-content-around">
-                <form id="formularioCuadro" method="post" style="display: none;">
-                    <span style="display: none;"><input name="shopId" type="text" id="shopId"><br></span>
-                    Autor:<input name="autor" type="text"><br>
-                    <input type="submit">
-                    <button id="botonBorrarCuadros">Borrar Todo</button>
+                <form id="formularioCuadro" method="post" >
+                    ID Tienda:<input class="form-control" name="shopId" type="text" id="shopId"><br>
+                    Autor:<input class="form-control" name="autor" type="text"><br>
+                    <input class="btn btn-outline-secondary" type="submit">
+                    
                 </form>
-                
+                <button class="btn btn-secondary " id="botonBorrarCuadros">Borrar Todo</button>
             </div>
                
         </div>
     </main>
-
-
+    
     <script src="jquery-3.6.0.min.js"></script>
-    <script src="bootstrap.js"></script>
     <script src="script.js"></script>
+    <script src="bootstrap.js"></script>
+    
 </body>
 </html>

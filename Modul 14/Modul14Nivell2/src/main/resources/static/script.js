@@ -1,11 +1,12 @@
 'use strict'
+getTiendas();
 $(document).ready(()=>{
     console.log("JQuery operativo");
-    getTiendas();
+    
     $('#formularioTienda').submit(function (e) { 
         e.preventDefault();
         postTienda();
-        location.reload();
+        
     });
     $('#formularioCuadro').submit(function (e) { 
         e.preventDefault();
@@ -24,13 +25,14 @@ function getTiendas(){
     }).then(function(data){
         $.each(data, (index) =>{
             
-            $('#cuerpoTabla').append('<tr >');
+            $('#cuerpoTabla').append('<tr class= "table table-success" >');
             $('#cuerpoTabla').append("<td >"+ data[index].id+"</td>");
             $('#cuerpoTabla').append("<td >"+ data[index].name+"</td>");
             $('#cuerpoTabla').append("<td '>"+ data[index].capacity+"</td>");
             $('#cuerpoTabla').append("<td >"+ data[index].picturesNumber+"</td>");
-            $('#cuerpoTabla').append("<td ><button onclick='getCuadros("+data[index].id+")'>Ver</button></td>");
+            $('#cuerpoTabla').append("<td ><button type='button' onclick='setButtons("+(index+1)+")' data-bs-toggle='collapse' data-bs-target='#collapse"+ (index+1) + "' aria-expanded='false' aria-controls='collapse"+ (index+1) + "'>Ver</button></td>");
             $('#cuerpoTabla').append("</tr>");
+            getCuadros(index+1);
         })
     }); 
 }
@@ -45,11 +47,13 @@ function postTienda(){
         
     });
 }   
+function setButtons(id){
+    $('#shopId').val(id);
+    $("#botonBorrarCuadros").attr("onclick","deleteCuadros("+id+")");
+}
 function getCuadros(id){
-   $('#tablaCuadros').css("display","block");
-   $('#formularioCuadro').css("display","block");
-   $('#shopId').val(id);
-   $("#botonBorrarCuadros").attr("onclick","deleteCuadros("+id+")");
+   $('#containerCuadros').append('<div class="collapse" id="collapse'+id+'"><div class="card card-body">'+'<table class="table" id="tablaCuadros" ><thead><th>ID<th>Autor <th>Fecha de entrada</thead><tbody id="cuerpoTablaCuadros'+id+'"> </tbody></table></div></div>')
+    let idTabla = "#cuerpoTablaCuadros"+id;
    $.ajax({
         method: "GET",
         url: "http://localhost:8080/shops/"+id+"/pictures",
@@ -57,11 +61,12 @@ function getCuadros(id){
         
     }).then((data)=>{
         $.each(data, (index) =>{
-            $('#cuerpoTablaCuadros').append('<tr >');
-            $('#cuerpoTablaCuadros').append("<td >"+ data[index].id+"</td>");
-            $('#cuerpoTablaCuadros').append("<td >"+ data[index].autor+"</td>");
-            $('#cuerpoTablaCuadros').append("<td '>"+ data[index].entranceDate+"</td>");
-            $('#cuerpoTablaCuadros').append("</tr>");
+            $(idTabla).append('<tr >');
+            $(idTabla).append("<td >"+ data[index].id+"</td>");
+            $(idTabla).append("<td >"+ data[index].autor+"</td>");
+            $(idTabla).append("<td '>"+ data[index].entranceDate+"</td>");
+            $(idTabla).append("</tr>");
+
         })    
     });
     
@@ -84,4 +89,5 @@ function deleteCuadros(id){
         dataType: "json",
         
     });
+    location.reload();
 }    
