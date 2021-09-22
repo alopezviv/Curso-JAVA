@@ -1,5 +1,6 @@
 package com.empleados.app.entity;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -14,17 +15,14 @@ public class DiceRoll {
     private Integer id;
 	private int dice1;
 	private int dice2;
-	@ManyToOne
-	@JoinColumn(name="player_id", nullable=false)
-	private Player player;
+	
+	
+	
 	public DiceRoll() {
-		
-	}
-	public DiceRoll(Player player) {
 		this.dice1 = (int)Math.ceil(Math.random()*6);
 		this.dice2 = (int)Math.ceil(Math.random()*6);
-		this.player = player;
 	}
+	
 	public Integer getId() {
 		return id;
 	}
@@ -43,12 +41,7 @@ public class DiceRoll {
 	public void setDice2(int dice2) {
 		this.dice2 = dice2;
 	}
-	public Player getPlayer() {
-		return player;
-	}
-	public void setPlayer(Player player) {
-		this.player = player;
-	}
+	
 	
 	
 }

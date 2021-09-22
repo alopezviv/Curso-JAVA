@@ -36,7 +36,7 @@ public class PlayerController {
 		return new ResponseEntity<>("Player modified!", HttpStatus.OK);
 	}
 	@PostMapping("/players/{id}/games")
-	public ResponseEntity<String> play(@PathVariable int id) {
+	public ResponseEntity<String> play(@PathVariable String id) {
 		try {
 			ps.play(id);
 			return new ResponseEntity<>("Roll!", HttpStatus.OK);
@@ -45,7 +45,7 @@ public class PlayerController {
 		}
 	}
 	@DeleteMapping("/players/{id}/games")
-	public ResponseEntity<String> deleteRolls(@PathVariable int id) {
+	public ResponseEntity<String> deleteRolls(@PathVariable String id) {
 		try {
 			ps.deleteRolls(id);
 			return new ResponseEntity<>("Rolls Deleted", HttpStatus.OK);
@@ -54,7 +54,7 @@ public class PlayerController {
 		}
 	}
 	@GetMapping("/players/{id}/games")
-	public ResponseEntity<List<DiceRoll>> getRolls(@PathVariable int id) {
+	public ResponseEntity<List<DiceRoll>> getRolls(@PathVariable String id) {
 		try {
 			return new ResponseEntity<>(ps.getDiceRolls(id), HttpStatus.OK );
 		} catch (Exception e) {

@@ -3,24 +3,17 @@ package com.empleados.app.entity;
 import java.util.ArrayList;
 import java.util.List;
 
-import javax.persistence.CascadeType;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.OneToMany;
+import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.mapping.Document;
 
-@Entity(name = "players")
+
+
+@Document(collection = "players")
 public class Player {
 
 	@Id
-	@GeneratedValue(strategy=GenerationType.IDENTITY)
-	private int id;
+	private String id;
 	private String name;
-	
-	@OneToMany(cascade = CascadeType.ALL,  orphanRemoval = true)
-	@JoinColumn(name="player_id", nullable=false)
 	private List<DiceRoll> rolls = new ArrayList<>();
 	
 	float winningPercentage = 0;
@@ -37,10 +30,10 @@ public class Player {
 		this.rolls = rolls;
 	}
 	
-	public int getId() {
+	public String getId() {
 		return id;
 	}
-	public void setId(int id) {
+	public void setId(String id) {
 		this.id = id;
 	}
 	public String getName() {

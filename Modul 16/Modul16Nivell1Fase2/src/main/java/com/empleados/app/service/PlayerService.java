@@ -18,7 +18,7 @@ public class PlayerService {
 
 	@Autowired
 	PlayerDao dao;
-	public Player getPlayer(int id) throws Exception {
+	public Player getPlayer(String id) throws Exception {
 		Optional<Player> p =dao.findById(id);
 		if(p.isPresent()) {
 			return p.get();
@@ -37,17 +37,17 @@ public class PlayerService {
 		dao.save(p);
 	}
 	
-	public void play(int id) throws Exception {
+	public void play(String id) throws Exception {
 		Player p = getPlayer(id);
 		p.getRolls().add(new DiceRoll());
 		p.setWinningPercentage(calculateWinningPercentage(p));
 		dao.save(p);
 	}
-	public List<DiceRoll> getDiceRolls(int id) throws Exception {
+	public List<DiceRoll> getDiceRolls(String id) throws Exception {
 		
 		return getPlayer(id).getRolls();
 	}
-	public void deleteRolls(int id) throws Exception {
+	public void deleteRolls(String id) throws Exception {
 		Player p = getPlayer(id);
 		p.getRolls().clear();
 		calculateWinningPercentage(p);
