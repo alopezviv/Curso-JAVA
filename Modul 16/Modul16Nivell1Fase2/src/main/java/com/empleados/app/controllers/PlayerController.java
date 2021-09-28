@@ -27,7 +27,12 @@ public class PlayerController {
 	}
 	@PostMapping("/players")
 	public ResponseEntity<String> postPlayer(Player p) {
-		ps.createPlayer(p);
+		try {
+			ps.createPlayer(p);
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			return new ResponseEntity<>(e.getMessage(), HttpStatus.BAD_REQUEST);
+		}
 		return new ResponseEntity<>("Player created!", HttpStatus.OK);
 	}
 	@PutMapping("/players")

@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 import java.util.Optional;
+import java.util.UUID;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.annotation.Transient;
@@ -18,7 +19,7 @@ public class PlayerService {
 
 	@Autowired
 	PlayerDao dao;
-	public Player getPlayer(String id) throws Exception {
+	public Player getPlayer(UUID id) throws Exception {
 		Optional<Player> p =dao.findById(id);
 		if(p.isPresent()) {
 			return p.get();
@@ -31,8 +32,8 @@ public class PlayerService {
 		return dao.findAll();
 	}
 	public void createPlayer(Player p) throws Exception {
-		if(p.getName().equals("Anonim")) {
-			dao.save(p);
+		if(p.getName().isBlank()) {
+			throw new Exception("Debe rellenar el campo de nombre");
 		}else if(dao.findDistinctByName(p.getName()).isPresent() ) {
 			throw new Exception("Nombre no disponible");
 		}else {
@@ -44,17 +45,17 @@ public class PlayerService {
 		dao.save(p);
 	}
 	
-	public void play(String id) throws Exception {
+	public void play(UUID id) throws Exception {
 		Player p = getPlayer(id);
 		p.getRolls().add(new DiceRoll());
 		p.setWinningPercentage(calculateWinningPercentage(p));
 		dao.save(p);
 	}
-	public List<DiceRoll> getDiceRolls(String id) throws Exception {
+	public List<DiceRoll> getDiceRolls(UUID id) throws Exception {
 		
 		return getPlayer(id).getRolls();
 	}
-	public void deleteRolls(String id) throws Exception {
+	public void deleteRolls(UUID id) throws Exception {
 		Player p = getPlayer(id);
 		p.getRolls().clear();
 		calculateWinningPercentage(p);

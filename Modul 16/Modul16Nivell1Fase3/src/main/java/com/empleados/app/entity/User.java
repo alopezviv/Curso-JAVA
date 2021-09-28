@@ -6,7 +6,9 @@ public class User {
 	private String pwd;
 	private String token;
 	
-	public User() {}
+	public User() {
+		
+	}
 	public String getUser() {
 		return user;
 	}

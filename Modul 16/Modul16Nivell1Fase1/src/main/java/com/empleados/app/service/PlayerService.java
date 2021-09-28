@@ -30,8 +30,15 @@ public class PlayerService {
 	public List<Player> getPlayers() {
 		return dao.findAll();
 	}
-	public void createPlayer(Player p) {
-		dao.save(p);
+	public void createPlayer(Player p) throws Exception {
+		if(p.getName().equals("Anonim")) {
+			dao.save(p);
+		}else if(dao.findDistinctByName(p.getName()).isPresent() ) {
+			throw new Exception("Nombre no disponible");
+		}else {
+			dao.save(p);
+		}
+		
 	}
 	public void modifyPlayer(Player p) {
 		dao.save(p);

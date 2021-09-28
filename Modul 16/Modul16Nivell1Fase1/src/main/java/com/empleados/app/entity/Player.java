@@ -47,7 +47,11 @@ public class Player {
 		return name;
 	}
 	public void setName(String name) {
-		this.name = name;
+		if(name.isBlank()) {
+			this.name = "Anonim";
+		}else {
+			this.name = name;
+		}
 	}
 	public float getWinningPercentage() {
 		return winningPercentage;

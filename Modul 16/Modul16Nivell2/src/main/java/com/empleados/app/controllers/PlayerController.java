@@ -1,6 +1,7 @@
 package com.empleados.app.controllers;
 
 import java.util.List;
+import java.util.UUID;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -32,7 +33,7 @@ public class PlayerController {
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			return new ResponseEntity<>(e.getMessage(), HttpStatus.BAD_REQUEST);
-		}		
+		}
 		return new ResponseEntity<>("Player created!", HttpStatus.OK);
 	}
 	@PutMapping("/players")
@@ -41,7 +42,7 @@ public class PlayerController {
 		return new ResponseEntity<>("Player modified!", HttpStatus.OK);
 	}
 	@PostMapping("/players/{id}/games")
-	public ResponseEntity<String> play(@PathVariable int id) {
+	public ResponseEntity<String> play(@PathVariable UUID id) {
 		try {
 			ps.play(id);
 			return new ResponseEntity<>("Roll!", HttpStatus.OK);
@@ -50,7 +51,7 @@ public class PlayerController {
 		}
 	}
 	@DeleteMapping("/players/{id}/games")
-	public ResponseEntity<String> deleteRolls(@PathVariable int id) {
+	public ResponseEntity<String> deleteRolls(@PathVariable UUID id) {
 		try {
 			ps.deleteRolls(id);
 			return new ResponseEntity<>("Rolls Deleted", HttpStatus.OK);
@@ -59,7 +60,7 @@ public class PlayerController {
 		}
 	}
 	@GetMapping("/players/{id}/games")
-	public ResponseEntity<List<DiceRoll>> getRolls(@PathVariable int id) {
+	public ResponseEntity<List<DiceRoll>> getRolls(@PathVariable UUID id) {
 		try {
 			return new ResponseEntity<>(ps.getDiceRolls(id), HttpStatus.OK );
 		} catch (Exception e) {
