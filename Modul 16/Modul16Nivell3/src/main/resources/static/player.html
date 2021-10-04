@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="topnav">
+        <span id="playerId"></span>
+        <span>Player: <div id="playerName"></div></span>
+    </div>
+    <h2>Juegos:</h2>
+    <p>Hay 3 Juegos:
+        <ul>
+            <li>1: Se gana si consigues un 7 con la suma de los dos dados</li>
+            <li>2: Se gana si consigues un 8 con la suma de los dos dados</li>
+            <li>3: Se gana si sacas un 7 o más</li>
+        </ul>
+
+        
+    </p>
+    <div>
+       <div class="containerDados"> Dado 1:<span id="dado1"></span></div><div class="containerDados"> Dado 2:<span id="dado2"></span></div>
+    </div>
+    <Button onclick="juego1()">Juego 1</Button><Button onclick="juego2()">Juego 2</Button><Button onclick="juego3()">Juego 3</Button>
+    <script src="jquery-3.6.0.min.js"></script>
+    <script src="scriptMain.js"></script>
+</body>
+</html>

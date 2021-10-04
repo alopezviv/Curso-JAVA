@@ -45,12 +45,17 @@ public class Player {
 		this.id = id;
 		
 	}
-	public String getName() {
+	
+	public String getNameCheckAnonim() {
 		if(isAnonim()) {
 			return "Anonim";
 		}else{
 			return name;
 			}
+	};
+	@JsonIgnore
+	public String getName() {
+		return name;
 	}
 	public void setName(String name) {
 		this.name = name;

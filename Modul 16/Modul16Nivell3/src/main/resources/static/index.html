@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Juego Dados</title>
+</head>
+<body>
+    <h1>Juego Dados</h1>
+    <form method="POST" id="formRegistroUsuario">
+        Nombre:<input type="text" name="name"><br>
+        ¿Ocultar nombre?: <input type="radio" id="true" name="anonim" value="true">
+        <label for="true">Si</label>
+        <input type="radio" id="false" name="anonim" value="false">
+        <label for="false">No</label><br>
+        <input type="submit" value="Registrar">
+    </form>
+    <form method="GET" id="formLogin">
+        Nombre:<input type="text" name="name"><br>
+        
+        <input type="submit" value="Login">
+    </form>
+
+    <script src="jquery-3.6.0.min.js"></script>
+    <script src="scriptMain.js"></script>
+</body>
+</html>
