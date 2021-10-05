@@ -4,11 +4,12 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Juego Dados</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <div class="topnav">
-        <span id="playerId"></span>
+        <span id="playerId">0852b3c3-b7c8-4f62-a420-71cc3a097aa6</span>
         <span>Player: <div id="playerName"></div></span>
     </div>
     <h2>Juegos:</h2>
@@ -16,16 +17,46 @@
         <ul>
             <li>1: Se gana si consigues un 7 con la suma de los dos dados</li>
             <li>2: Se gana si consigues un 8 con la suma de los dos dados</li>
-            <li>3: Se gana si sacas un 7 o más</li>
+            <li>3: Se gana si sacas más de un 7</li>
         </ul>
 
         
     </p>
+    
+    
     <div>
-       <div class="containerDados"> Dado 1:<span id="dado1"></span></div><div class="containerDados"> Dado 2:<span id="dado2"></span></div>
+        <div class="tablaDados">
+            <h3> Partidas juego 1: </h3>
+                <table>
+                    <thead><th>Dado 1:<th>Dado 2:<th>Victoria</thead>
+                    <tbody id="tiradasJuego1">
+
+                    </tbody>
+                </table>
+                <button onclick="borrarTiradas1()">Borrar Tiradas</button><Button onclick="juego1()">Jugar</Button>
+        </div>
+        <div class="tablaDados">
+                <h3> Partidas juego 2: </h3>
+                <table>
+                    <thead><th>Dado 1:<th>Dado 2:<th>Victoria</thead>
+                    <tbody id="tiradasJuego2">
+        
+                    </tbody>
+                </table>
+                <button onclick="borrarTiradas2()">Borrar Tiradas</button><Button onclick="juego2()">Jugar</Button>
+        </div>
+        <div class="tablaDados">
+                <h3> Partidas juego 3: </h3>
+                <table>
+                    <thead><th>Dado 1:<th>Dado 2: <th>Victoria</thead>
+                    <tbody id="tiradasJuego3">
+        
+                    </tbody>
+                </table>
+                <button onclick="borrarTiradas3()">Borrar Tiradas</button><Button onclick="juego3()">Jugar</Button>
+        </div>
     </div>
-    <Button onclick="juego1()">Juego 1</Button><Button onclick="juego2()">Juego 2</Button><Button onclick="juego3()">Juego 3</Button>
     <script src="jquery-3.6.0.min.js"></script>
-    <script src="scriptMain.js"></script>
+    <script src="scriptPlayer.js"></script>
 </body>
 </html>
