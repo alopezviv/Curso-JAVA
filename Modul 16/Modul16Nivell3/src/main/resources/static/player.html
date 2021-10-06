@@ -5,57 +5,69 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Juego Dados</title>
+    <link rel="stylesheet" href="bootstrap.css">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="topnav">
-        <span id="playerId">0852b3c3-b7c8-4f62-a420-71cc3a097aa6</span>
-        <span>Player: <div id="playerName"></div></span>
-    </div>
-    <h2>Juegos:</h2>
-    <p>Hay 3 Juegos:
-        <ul>
-            <li>1: Se gana si consigues un 7 con la suma de los dos dados</li>
-            <li>2: Se gana si consigues un 8 con la suma de los dos dados</li>
-            <li>3: Se gana si sacas más de un 7</li>
-        </ul>
+    <div class="container">    
+        <div class="row">
+                <div class="navbar navbar-light bg-light">
+                    <div style="display: none;" id="playerId"></div>
+                    <div id="playerName"></div>
+                </div>
+        </div>
+        <div class="row">
+            <h1 class="text-center">Juegos:</h1>
+                <div class="card"> 
+                    <ul class="list-group list-group-flush text-center">
+                        <li class="list-group-item text-center">1: Se gana si consigues un 7 con la suma de los dos dados</li>
+                        <li class="list-group-item text-center">2: Se gana si consigues un 8 con la suma de los dos dados</li>
+                        <li class="list-group-item text-center">3: Se gana si sacas más de un 7</li>
+                    </ul>
+                </div>
+        </div>    
+       
+        
+        <div class="row">
+            <div class="col-4">
+            
+                <div class="table tablaDados">
+                    <h3> Partidas juego 1: </h3>
+                        <table>
+                            <thead><th>Dado 1:<th>Dado 2:<th>Victoria</thead>
+                            <tbody id="tiradasJuego1">
 
-        
-    </p>
-    
-    
-    <div>
-        <div class="tablaDados">
-            <h3> Partidas juego 1: </h3>
-                <table>
-                    <thead><th>Dado 1:<th>Dado 2:<th>Victoria</thead>
-                    <tbody id="tiradasJuego1">
-
-                    </tbody>
-                </table>
-                <button onclick="borrarTiradas1()">Borrar Tiradas</button><Button onclick="juego1()">Jugar</Button>
+                            </tbody>
+                        </table>
+                        <button onclick="borrarTiradas1()">Borrar Tiradas</button><Button onclick="juego1()">Jugar</Button>
+                </div>
+            </div>
+            <div class="col-4">
+                <div class="table tablaDados">
+                        <h3> Partidas juego 2: </h3>
+                        <table>
+                            <thead><th>Dado 1:<th>Dado 2:<th>Victoria</thead>
+                            <tbody id="tiradasJuego2">
+                
+                            </tbody>
+                        </table>
+                        <button onclick="borrarTiradas2()">Borrar Tiradas</button><Button onclick="juego2()">Jugar</Button>
+                </div>
+            </div>
+            <div class="col-4">   
+                <div class="table tablaDados">
+                        <h3> Partidas juego 3: </h3>
+                        <table>
+                            <thead><th>Dado 1:<th>Dado 2: <th>Victoria</thead>
+                            <tbody id="tiradasJuego3">
+                
+                            </tbody>
+                        </table>
+                        <button onclick="borrarTiradas3()">Borrar Tiradas</button><Button onclick="juego3()">Jugar</Button>
+                </div>
+            </div> 
         </div>
-        <div class="tablaDados">
-                <h3> Partidas juego 2: </h3>
-                <table>
-                    <thead><th>Dado 1:<th>Dado 2:<th>Victoria</thead>
-                    <tbody id="tiradasJuego2">
-        
-                    </tbody>
-                </table>
-                <button onclick="borrarTiradas2()">Borrar Tiradas</button><Button onclick="juego2()">Jugar</Button>
-        </div>
-        <div class="tablaDados">
-                <h3> Partidas juego 3: </h3>
-                <table>
-                    <thead><th>Dado 1:<th>Dado 2: <th>Victoria</thead>
-                    <tbody id="tiradasJuego3">
-        
-                    </tbody>
-                </table>
-                <button onclick="borrarTiradas3()">Borrar Tiradas</button><Button onclick="juego3()">Jugar</Button>
-        </div>
-    </div>
+    </div>    
     <script src="jquery-3.6.0.min.js"></script>
     <script src="scriptPlayer.js"></script>
 </body>

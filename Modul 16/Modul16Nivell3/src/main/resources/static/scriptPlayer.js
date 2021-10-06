@@ -1,10 +1,23 @@
 $(document).ready(()=>{
-    console.log("JQUERY Activado")
+    console.log(sessionStorage.getItem("id"));
+    $("#playerId").text(sessionStorage.getItem("id"));
+    console.log("JQUERY Activado");
+    getPlayer();
     getTiradasJuego1();
     getTiradasJuego2();
     getTiradasJuego3();
 
 });
+function getPlayer(){
+    let id = $("#playerId").text();
+    $.ajax({
+        type: "GET",
+        url: "http://localhost:8080/players/"+id
+    }).then((data)=>{
+        console.log(data)
+        $("#playerName").text("Player: " + data.nameCheckAnonim);
+    });
+}
 function juego1(){
     let id = $("#playerId").text();
     $.ajax({

@@ -5,52 +5,72 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Juego Dados</title>
+    <link rel="stylesheet" href="bootstrap.css">
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <h1>Juego Dados</h1>
-    <form method="POST" id="formRegistroUsuario">
-        Nombre:<input type="text" name="name"><br>
-        ¿Ocultar nombre?: <input type="radio" id="true" name="anonim" value="true">
-        <label for="true">Si</label>
-        <input type="radio" id="false" name="anonim" value="false">
-        <label for="false">No</label><br>
-        <input type="submit" value="Registrar">
-    </form>
-    <form method="GET" id="formLogin">
-        Nombre:<input type="text" name="name"><br>
-        
-        <input type="submit" value="Login">
-    </form><br>
-    <div>
-        <div>
-            <h3>Juego 1</h3>
-            Mejor Jugador: 
-            <span id="winner1"></span><br> 
-            Peor Jugador: 
-            <span id="losser1"></span><br>
-            Porcentaje de victorias global: 
-            <span id="globalRanking1"></span><br>
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                <h1>Juego Dados</h1>
+            </div>
         </div>
-        <div>
-            <h3>Juego 2</h3>
-            Mejor Jugador:  
-            <span id="winner2"></span><br>
-            Peor Jugador: 
-            <span id="losser2"></span><br> 
-            Porcentaje de victorias global: 
-            <span id="globalRanking2"></span><br>
+        <div class="row">
+            <div class="col-6">
+                <form method="POST" id="formRegistroUsuario">
+                    Nombre:<input type="text" name="name"><br>
+                    ¿Ocultar nombre?: <input type="radio" id="true" name="anonim" value="true">
+                    <label for="true">Si</label>
+                    <input type="radio" id="false" name="anonim" value="false">
+                    <label for="false">No</label><br>
+                    <input type="submit" value="Registrar">
+                </form>
+            </div>
+            <div class="col-6">
+                <form method="GET" id="formLogin">
+                    Nombre:<input type="text" name="name" id="userName"><br>
+                    
+                    <input type="submit" value="Login">
+                </form>
+            </div>
         </div>
-        <div>
-            <h3>Juego 3</h3>
-            Mejor Jugador: 
-            <span id="winner3"></span> <br>
-            Peor Jugador:  
-            <span id="losser3"></span><br>
-            Porcentaje de victorias global: 
-            <span id="globalRanking3"></span><br>
+        <div class="row"> 
+            <div class="col-4">   
+            
+                <div>
+                    <h3>Juego 1</h3>
+                    Mejor Jugador: 
+                    <span id="winner1"></span><br> 
+                    Peor Jugador: 
+                    <span id="losser1"></span><br>
+                    Porcentaje de victorias global: 
+                    <span id="globalRanking1"></span><br>
+                </div>
+            </div> 
+            <div class="col-4">
+                <div>
+                    <h3>Juego 2</h3>
+                    Mejor Jugador:  
+                    <span id="winner2"></span><br>
+                    Peor Jugador: 
+                    <span id="losser2"></span><br> 
+                    Porcentaje de victorias global: 
+                    <span id="globalRanking2"></span><br>
+                </div>
+            </div> 
+            <div class="col-4">      
+                <div>
+                    <h3>Juego 3</h3>
+                    Mejor Jugador: 
+                    <span id="winner3"></span> <br>
+                    Peor Jugador:  
+                    <span id="losser3"></span><br>
+                    Porcentaje de victorias global: 
+                    <span id="globalRanking3"></span><br>
+                </div>
+            </div>
         </div>
     </div>
-
     <script src="jquery-3.6.0.min.js"></script>
     <script src="scriptMain.js"></script>
 </body>

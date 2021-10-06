@@ -28,6 +28,25 @@ public class PlayerController {
 	public ResponseEntity<List<Player>> getPlayers(){
 		return new ResponseEntity<List<Player>>(ps.getPlayers(), HttpStatus.OK);
 	}
+	@GetMapping("/players/{id}")
+	public ResponseEntity<Player> getPlayers(@PathVariable UUID id){
+		try {
+			Player player = ps.getPlayer(id);
+			return new ResponseEntity<Player>(player, HttpStatus.OK);
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			return new ResponseEntity<>(null, HttpStatus.NOT_FOUND);
+		}
+		
+	}
+	@GetMapping("/player/{name}")
+	public ResponseEntity<Player> getPlayerByName(@PathVariable String name){
+		try {
+			return new ResponseEntity<Player>(ps.getPlayerByName(name), HttpStatus.OK);
+		} catch (Exception e) {
+			return new ResponseEntity<>(null, HttpStatus.NOT_FOUND);
+		}
+	}
 	@PostMapping("/players")
 	public ResponseEntity<String> postPlayer(Player p) {
 		try {

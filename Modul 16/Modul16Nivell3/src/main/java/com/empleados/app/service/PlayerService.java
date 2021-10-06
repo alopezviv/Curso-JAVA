@@ -41,6 +41,13 @@ public class PlayerService {
 		}
 		dao.save(p);
 	}
+	public Player getPlayerByName(String name) throws Exception {
+		if(dao.findDistinctByName(name).isPresent() ) {
+			return dao.findDistinctByName(name).get();
+		}else {
+			throw new Exception("El Jugador no Existe");
+		}
+	}
 	public void modifyPlayer(Player p) {
 		dao.save(p);
 	}

@@ -4,6 +4,11 @@ $(document).ready(()=>{
         e.preventDefault();
         postPlayer();
     });
+    $("#formLogin").submit(function (e) { 
+        e.preventDefault();
+        let name = $("#userName").val();
+        login(name);
+    });
     winner1();
     winner2();
     winner3();
@@ -26,6 +31,16 @@ function postPlayer(){
             alert(data.responseText);
         }
     });  
+}
+function login(name){
+    $.ajax({
+        type: "GET",
+        url: "http://localhost:8080/player/"+ name, 
+    }).then((data)=>{
+        console.log(data);
+        sessionStorage.setItem("id", data.id);
+        window.location.href="player.html";
+    });
 }
 function winner1(){
     
