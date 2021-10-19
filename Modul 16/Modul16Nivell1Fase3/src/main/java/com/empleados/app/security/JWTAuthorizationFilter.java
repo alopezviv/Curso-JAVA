@@ -9,6 +9,7 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import org.springframework.http.HttpHeaders;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.context.SecurityContextHolder;
@@ -30,6 +31,7 @@ public class JWTAuthorizationFilter extends OncePerRequestFilter {
 		try {
 			if(existeJWTToken(request, response)) {
 				Claims claims = validateToken(request);
+				System.out.println("claims: " + claims.get("authorities"));
 				if(claims.get("authorities") != null) {
 					setUpSpringAuthentication(claims);
 				}else {
@@ -42,7 +44,7 @@ public class JWTAuthorizationFilter extends OncePerRequestFilter {
 		}catch(ExpiredJwtException | UnsupportedJwtException | MalformedJwtException e) {
 			System.err.println(e.getMessage());
 			response.setStatus(HttpServletResponse.SC_FORBIDDEN);
-			
+			System.out.println(e.getMessage());
 			((HttpServletResponse) response).sendError(HttpServletResponse.SC_FORBIDDEN,
 					e.getMessage());
 		}
@@ -54,8 +56,8 @@ public class JWTAuthorizationFilter extends OncePerRequestFilter {
 	}
 	private void setUpSpringAuthentication(Claims claims) {
 		@SuppressWarnings("unchecked")
-		List<String> authorities = (List) claims.get("authorities");
-		
+		List<String> authorities = (List<String>) claims.get("authorities");
+		System.out.println("authorities: " + authorities.toString());
 		UsernamePasswordAuthenticationToken auth = 
 				new UsernamePasswordAuthenticationToken(claims.getSubject(), null,
 						authorities.stream().map(SimpleGrantedAuthority::new).collect(Collectors.toList()));
@@ -63,10 +65,16 @@ public class JWTAuthorizationFilter extends OncePerRequestFilter {
 	}
 	private boolean existeJWTToken(HttpServletRequest request, HttpServletResponse response) {
 		String authenticationHeader = request.getHeader(HEADER);
-		if(authenticationHeader == null || !authenticationHeader.startsWith(PREFIX)) {
-			return false;
+		System.err.print(authenticationHeader);
+		System.err.print("aqui");
+		if(authenticationHeader == null) {
+			System.err.println("Null");
 		}
-		return true;
+		/*if(authenticationHeader != null && authenticationHeader.startsWith(PREFIX)) {
+			System.err.print("aqui2");
+			return true;
+		}*/
+		return false;
 	}
 
 }
